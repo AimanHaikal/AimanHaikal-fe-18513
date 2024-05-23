@@ -10,6 +10,8 @@ body {
   max-width: 800px;
   margin: 0 auto;
   padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .header, .footer {
@@ -52,4 +54,27 @@ button {
 
 button:hover {
   background-color: #005bb5;
+}
+
+.result-group {
+  margin-bottom: 20px;
+}
+
+h2 {
+  margin: 0 0 10px 0;
+  color: #0070f3;
+}
+
+p, li {
+  margin: 0;
+  padding: 5px 0;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  border-bottom: 1px solid #eee;
 }
