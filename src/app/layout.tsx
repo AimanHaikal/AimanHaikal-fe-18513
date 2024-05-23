@@ -8,10 +8,11 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
         <header>
           <nav>
             <a href="/">Home</a>
+            <span className="separator"> | </span>
             <a href="/results">Results</a>
           </nav>
         </header>
-        <main>{children}</main>
+        <main className="main-content">{children}</main>
         <footer>© 2024 Web Assessment</footer>
       </body>
     </html>

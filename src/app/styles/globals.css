@@ -78,3 +78,26 @@ ul {
 li {
   border-bottom: 1px solid #eee;
 }
+
+.main-content {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 50px; /* Adjust the top margin as needed */
+  max-width: 800px; /* Adjust the maximum width as needed */
+}
+
+header {
+  background-color: #f0f0f0;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #333; /* Adjust background color as needed */
+  color: white; /* Adjust text color as needed */
+  padding: 10px; /* Adjust padding as needed */
+}

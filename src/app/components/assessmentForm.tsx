@@ -1,20 +1,19 @@
 // src/app/components/assessmentForm.tsx
 "use client";
 
+import React from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import { useRouter } from 'next/navigation';
 import Question from './question';
 
-const questions = [
-  "What is your favorite color?",
-  "Describe your last vacation.",
-];
+interface AssessmentFormProps {
+  data: any; // Modify this type according to the expected shape of the data
+}
 
-const AssessmentForm = () => {
+const AssessmentForm: React.FC<AssessmentFormProps> = ({ data }) => {
   const router = useRouter();
-
-  const initialValues = { name: '', email: '', answers: questions.map(() => '') };
+  const initialValues = { name: '', email: '', answers: ['', ''] };
 
   const validationSchema = Yup.object({
     name: Yup.string().required('Required'),
@@ -47,9 +46,8 @@ const AssessmentForm = () => {
           <ErrorMessage name="email" component="div" className="error" />
         </div>
 
-        {questions.map((question, index) => (
-          <Question key={index} question={question} index={index} />
-        ))}
+        <Question question="What is your favorite color?" index={0} />
+        <Question question="Describe your last vacation." index={1} />
 
         <button type="submit">Submit</button>
       </Form>
