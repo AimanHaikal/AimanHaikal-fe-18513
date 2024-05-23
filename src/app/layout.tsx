@@ -2,13 +2,12 @@
 "use client";
 
 import "./styles/globals.css";
-import PlayButton from "./styles/icons/Play Button";
-import { SlMagnifier, SlEnvolope, SlPhone, SlArrowRight } from "react-icons/sl";
-import { VscAccount } from "react-icons/vsc";
+import { SlEnvolope, SlPhone, SlArrowRight } from "react-icons/sl";
 import { TfiLocationPin } from "react-icons/tfi";
 import MovieCard from "./components/movieCard";
 import { useRouter } from "next/navigation";
 import { useEffect } from "react";
+import Header from "./components/header";
 
 const RootLayout = ({ children }: { children: React.ReactNode }) => {
   const router = useRouter();
@@ -61,70 +60,7 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <html lang="en">
       <body>
-        <header>
-          <div className="header-top">
-            <div className="logo">
-              <a href="/" className="logo-link">
-                PcariMovie
-              </a>
-            </div>
-            <nav className="nav">
-              <ul className="nav-menu">
-                <li className="nav-item">
-                  <a href="/" className="nav-link">
-                    Movies
-                  </a>
-                </li>
-                <li className="nav-item">
-                  <a href="#" className="nav-link">
-                    TV Show
-                  </a>
-                </li>
-                <li className="nav-item">
-                  <a href="#" className="nav-link">
-                    Video
-                  </a>
-                </li>
-                <li className="nav-item">
-                  <a href="#" className="nav-link">
-                    FAQ
-                  </a>
-                </li>
-                <li className="nav-item">
-                  <a href="#" className="nav-link">
-                    Pricing
-                  </a>
-                </li>
-                <li className="nav-item">
-                  <a href="#" className="nav-link">
-                    Contact Us
-                  </a>
-                </li>
-              </ul>
-            </nav>
-            <div className="user-section">
-              <SlMagnifier color="white" style={{ marginRight: "50px" }} />
-              <VscAccount color="white" style={{ marginRight: "10px" }} />
-              <div className="user-name">John Glich</div>
-            </div>
-          </div>
-          <div className="header-bottom">
-            <div className="header-bottom-left">
-              <PlayButton />
-            </div>
-            <div className="header-bottom-right">
-              <h1 style={{ textAlign: "left" }}>Find your movies here!</h1>
-
-              <p>
-                Explore our gallery full of exciting films from all around the
-                globe
-              </p>
-              <p>
-                Only your entertainment. No hidden charges or disturbing ads.
-              </p>
-            </div>
-          </div>
-        </header>
+        <Header />
 
         <div className="movie-grid-container">
           <div
