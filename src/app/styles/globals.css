@@ -96,16 +96,6 @@ header {
   padding: 1rem;
 }
 
-footer {
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  background-color: #333; /* Adjust background color as needed */
-  color: white; /* Adjust text color as needed */
-  padding: 10px; /* Adjust padding as needed */
-}
-
 .logo {
   font-size: 2rem;
   font-weight: bold;
@@ -154,4 +144,121 @@ footer {
 .user-name {
   color: white;
   margin-right: 1rem;
+}
+
+footer {
+  position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    padding: 0;
+    display: flex;
+  color: #fff;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+.footer-container-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  margin-top: 2rem;
+}
+
+footer a {
+  color: #d3d3d3;
+  text-decoration: none;
+}
+
+.footer-left,
+.footer-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.footer-link-item {
+  margin-bottom: 0.5rem;
+}
+
+.footer-title-item {
+  color: #fff;
+  text-decoration: none;
+}
+
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .footer-left,
+  .footer-right {
+    margin-top: 1rem;
+  }
+}
+
+.footer-on-left,
+.footer-on-right {
+    padding: 1rem;
+    color: #fff;
+}
+
+.footer-on-left {
+  flex: 2;
+    background-color: #3D3D3D; /* Background color for the left side */
+    text-align: left;
+}
+
+.footer-on-right {
+  flex: 3;
+    background-color: #2E2E2E; /* Background color for the right side */
+    text-align: right;
+}
+
+h1{text-align: center;}
+
+.footer-description {
+  color: #d3d3d3;
+  text-decoration: none;
+}
+
+.newsletter-container {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.newsletter-input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  border: 1px solid #525252;
+  background-color: #525252;
+  color: white;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.newsletter-button {
+  padding: 10px 20px;
+  margin-top: 10px;
+  background-color: #FFFF00;
+  color: black;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.newsletter-button:hover {
+  background-color: #FFFFED;
 }
