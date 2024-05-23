@@ -1,6 +1,7 @@
 // app/layout.tsx
 import "./styles/globals.css";
-import { SlMagnifier, SlEnvolope, SlPhone,SlArrowRight  } from "react-icons/sl";
+import PlayButton from "./styles/icons/Play Button";
+import { SlMagnifier, SlEnvolope, SlPhone, SlArrowRight } from "react-icons/sl";
 import { VscAccount } from "react-icons/vsc";
 import { TfiLocationPin } from "react-icons/tfi";
 
@@ -9,58 +10,70 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
     <html lang="en">
       <body>
         <header>
-          <div className="logo">
-            <a href="#" className="logo-link">
-              PcariMovie
-            </a>
+          <div className="header-top">
+            <div className="logo">
+              <a href="#" className="logo-link">
+                PcariMovie
+              </a>
+            </div>
+            <nav className="nav">
+              <ul className="nav-menu">
+                <li className="nav-item">
+                  <a href="#" className="nav-link">
+                    Movies
+                  </a>
+                </li>
+                <li className="nav-item">
+                  <a href="#" className="nav-link">
+                    TV Show
+                  </a>
+                </li>
+                <li className="nav-item">
+                  <a href="#" className="nav-link">
+                    Video
+                  </a>
+                </li>
+                <li className="nav-item">
+                  <a href="#" className="nav-link">
+                    FAQ
+                  </a>
+                </li>
+                <li className="nav-item">
+                  <a href="#" className="nav-link">
+                    Pricing
+                  </a>
+                </li>
+                <li className="nav-item">
+                  <a href="#" className="nav-link">
+                    Contact Us
+                  </a>
+                </li>
+              </ul>
+            </nav>
+            <div className="user-section">
+              <SlMagnifier color="white" style={{ marginRight: "50px" }} />
+              <VscAccount color="white" style={{ marginRight: "10px" }} />
+              <div className="user-name">John Glich</div>
+            </div>
           </div>
-          <nav className="nav">
-            <ul className="nav-menu">
-              <li className="nav-item">
-                <a href="#" className="nav-link">
-                  Movies
-                </a>
-              </li>
-              <li className="nav-item">
-                <a href="#" className="nav-link">
-                  TV Show
-                </a>
-              </li>
-              <li className="nav-item">
-                <a href="#" className="nav-link">
-                  Video
-                </a>
-              </li>
-              <li className="nav-item">
-                <a href="#" className="nav-link">
-                  FAQ
-                </a>
-              </li>
-              <li className="nav-item">
-                <a href="#" className="nav-link">
-                  Pricing
-                </a>
-              </li>
-              <li className="nav-item">
-                <a href="#" className="nav-link">
-                  Contact Us
-                </a>
-              </li>
-            </ul>
-          </nav>
-          <div className="user-section">
-            <SlMagnifier color="white" style={{ marginRight: "50px" }} />
-            <VscAccount color="white" style={{ marginRight: "10px" }} />
-            <div className="user-name">John Glich</div>
+          <div className="header-bottom">
+            <div className="header-bottom-left">
+              <PlayButton />
+            </div>
+            <div className="header-bottom-right">
+              <h1 style={{ textAlign: "left" }}>Find your movies here!</h1>
+
+              <p>
+                Explore our gallery full of exciting films from all around the
+                globe
+              </p>
+              <p>
+                Only your entertainment. No hidden charges or disturbing ads.
+              </p>
+            </div>
           </div>
         </header>
-        <div className="movie-gallery">
-          <h2>Find your movies here!</h2>
-          <p>
-            Explore our gallery full of exciting films from all around the globe
-          </p>
-          <p>Only your entertainment. No hidden charges or disturbing ads.</p>
-        </div>
+
         <footer>
           <div className="footer-on-left">
             <h1>PcariMovie</h1>
@@ -71,12 +84,15 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
             <br />
             <p>Join Newsletters</p>
             <div className="newsletter-container">
-            <input 
-    type="email" 
-    placeholder="Insert your mail here" 
-    className="newsletter-input" 
-  />
-  <button className="newsletter-button"><SlArrowRight/> </button></div>
+              <input
+                type="email"
+                placeholder="Insert your mail here"
+                className="newsletter-input"
+              />
+              <button className="newsletter-button">
+                <SlArrowRight />{" "}
+              </button>
+            </div>
           </div>
           <div className="footer-on-right">
             <div className="footer-container">

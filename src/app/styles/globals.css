@@ -63,7 +63,7 @@ button:hover {
 
 h2 {
   margin: 0 0 10px 0;
-  color: #0070f3;
+  color: white;
 }
 
 p,
@@ -89,11 +89,45 @@ li {
 }
 
 header {
+  background: linear-gradient(
+    to right,
+    #333,
+    black
+  ); /* Adjust colors as needed */
+  padding: 1rem;
+}
+
+.header-top,
+.header-bottom {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  background-color: #1a1a1a;
   padding: 1rem;
+}
+
+.header-top {
+  flex-direction: row;
+  align-items: center;
+}
+
+.header-bottom {
+  display: flex;
+  align-items: center;
+  flex-direction: row; /* Ensures elements are displayed side by side */
+  color: white;
+  margin-top: 100px;
+}
+
+.header-bottom-left {
+  align-items: right;
+  text-align: right;
+  flex: 2;
+}
+
+.header-bottom-right {
+  text-align: left;
+  align-items: left;
+  flex: 3;
+  padding-left: 100px;
 }
 
 .logo {
@@ -147,12 +181,11 @@ header {
 }
 
 footer {
-  position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    padding: 0;
-    display: flex;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  padding: 0;
+  display: flex;
   color: #fff;
 }
 
@@ -209,23 +242,25 @@ footer a {
 
 .footer-on-left,
 .footer-on-right {
-    padding: 1rem;
-    color: #fff;
+  padding: 1rem;
+  color: #fff;
 }
 
 .footer-on-left {
   flex: 2;
-    background-color: #3D3D3D; /* Background color for the left side */
-    text-align: left;
+  background-color: #3d3d3d; /* Background color for the left side */
+  text-align: left;
 }
 
 .footer-on-right {
   flex: 3;
-    background-color: #2E2E2E; /* Background color for the right side */
-    text-align: right;
+  background-color: #2e2e2e; /* Background color for the right side */
+  text-align: right;
 }
 
-h1{text-align: center;}
+h1 {
+  text-align: center;
+}
 
 .footer-description {
   color: #d3d3d3;
@@ -252,7 +287,7 @@ h1{text-align: center;}
 .newsletter-button {
   padding: 10px 20px;
   margin-top: 10px;
-  background-color: #FFFF00;
+  background-color: #ffff00;
   color: black;
   border: none;
   border-radius: 4px;
@@ -260,5 +295,5 @@ h1{text-align: center;}
 }
 
 .newsletter-button:hover {
-  background-color: #FFFFED;
+  background-color: #ffffed;
 }
