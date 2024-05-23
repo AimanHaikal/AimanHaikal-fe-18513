@@ -7,7 +7,8 @@ import { SlMagnifier, SlEnvolope, SlPhone, SlArrowRight } from "react-icons/sl";
 import { VscAccount } from "react-icons/vsc";
 import { TfiLocationPin } from "react-icons/tfi";
 import MovieCard from "./components/movieCard";
-import { useRouter } from 'next/navigation';
+import { useRouter } from "next/navigation";
+import { useEffect } from "react";
 
 const RootLayout = ({ children }: { children: React.ReactNode }) => {
   const router = useRouter();
@@ -44,20 +45,33 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
     },
   ];
 
+  useEffect(() => {
+    // Check if window is defined (running on the client-side)
+    if (typeof window !== "undefined") {
+      const path = window.location.pathname;
+      const navLinks = document.querySelectorAll(".nav-link");
+      navLinks.forEach((link) => {
+        if ((link as HTMLAnchorElement).getAttribute("href") === path) {
+          link.parentElement!.classList.add("active");
+        }
+      });
+    }
+  }, []); // Empty dependency array ensures this effect runs only once, similar to componentDidMount
+
   return (
     <html lang="en">
       <body>
         <header>
           <div className="header-top">
             <div className="logo">
-              <a href="#" className="logo-link">
+              <a href="/" className="logo-link">
                 PcariMovie
               </a>
             </div>
             <nav className="nav">
               <ul className="nav-menu">
                 <li className="nav-item">
-                  <a href="#" className="nav-link">
+                  <a href="/" className="nav-link">
                     Movies
                   </a>
                 </li>
@@ -113,10 +127,31 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
         </header>
 
         <div className="movie-grid-container">
-        <div style={{ flexDirection: "row", display: "flex", justifyContent: "space-between", alignItems: "center", width: "38%" }}>
-        <h1 style={{ textAlign: "left", color: "white", margin: 0 }}>New Releases</h1>
-        <a style={{ marginLeft: "auto", cursor: "pointer", textDecoration: "underline", color: "yellow" }} onClick={() => router.push('')}>View More</a>
-      </div><br/>
+          <div
+            style={{
+              flexDirection: "row",
+              display: "flex",
+              justifyContent: "space-between",
+              alignItems: "center",
+              width: "38%",
+            }}
+          >
+            <h1 style={{ textAlign: "left", color: "white", margin: 0 }}>
+              New Releases
+            </h1>
+            <a
+              style={{
+                marginLeft: "auto",
+                cursor: "pointer",
+                textDecoration: "underline",
+                color: "yellow",
+              }}
+              onClick={() => router.push("")}
+            >
+              View More
+            </a>
+          </div>
+          <br />
           <div className="movie-grid">
             {movies.map((movie, index) => (
               <div

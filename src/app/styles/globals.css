@@ -77,10 +77,6 @@ ul {
   padding: 0;
 }
 
-li {
-  border-bottom: 1px solid #eee;
-}
-
 .main-content {
   margin-left: auto;
   margin-right: auto;
@@ -156,6 +152,10 @@ header {
 
 .nav-item {
   margin-left: 1rem;
+}
+
+.active {
+  border-bottom: 5px solid yellow;
 }
 
 .nav-link {
