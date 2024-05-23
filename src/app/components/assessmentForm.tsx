@@ -1,29 +1,32 @@
-// components/AssessmentForm.tsx
-import { Formik, Form, Field, ErrorMessage } from 'formik'
-import * as Yup from 'yup'
-import { useRouter } from 'next/router'
-import Question from './question'
+// src/app/components/assessmentForm.tsx
+"use client";
+
+import { Formik, Form, Field, ErrorMessage } from 'formik';
+import * as Yup from 'yup';
+import { useRouter } from 'next/navigation';
+import Question from './question';
 
 const questions = [
   "What is your favorite color?",
   "Describe your last vacation.",
-]
+];
 
 const AssessmentForm = () => {
-  const router = useRouter()
+  const router = useRouter();
 
-  const initialValues = { name: '', email: '', answers: questions.map(() => '') }
+  const initialValues = { name: '', email: '', answers: questions.map(() => '') };
 
   const validationSchema = Yup.object({
     name: Yup.string().required('Required'),
     email: Yup.string().email('Invalid email address').required('Required'),
     answers: Yup.array().of(Yup.string().required('Answer is required'))
-  })
+  });
 
-  const onSubmit = (values: any) => {
-    console.log(values)
-    router.push('/results')
-  }
+  const onSubmit = (values: { name: string, email: string, answers: string[] }) => {
+    console.log(values);
+    localStorage.setItem('assessmentResults', JSON.stringify(values));
+    router.push('/results');
+  };
 
   return (
     <Formik
@@ -51,7 +54,7 @@ const AssessmentForm = () => {
         <button type="submit">Submit</button>
       </Form>
     </Formik>
-  )
-}
+  );
+};
 
-export default AssessmentForm
+export default AssessmentForm;

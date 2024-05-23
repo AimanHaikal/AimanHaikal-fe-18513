@@ -1,4 +1,6 @@
-// pages/results.tsx
+// src/app/results/page.tsx
+"use client";
+
 import { useState, useEffect } from 'react';
 
 interface Result {
@@ -10,17 +12,11 @@ interface Result {
 const Results = () => {
   const [results, setResults] = useState<Result | null>(null);
 
-  // Mock fetch function to simulate fetching results
   useEffect(() => {
-    const fetchResults = async () => {
-      // Simulate fetching data from a server or local storage
-      const storedResults = localStorage.getItem('assessmentResults');
-      if (storedResults) {
-        setResults(JSON.parse(storedResults));
-      }
-    };
-
-    fetchResults();
+    const storedResults = localStorage.getItem('assessmentResults');
+    if (storedResults) {
+      setResults(JSON.parse(storedResults));
+    }
   }, []);
 
   if (!results) {
