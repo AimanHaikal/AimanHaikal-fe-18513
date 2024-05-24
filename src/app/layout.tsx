@@ -6,7 +6,7 @@ import Header from "./components/header";
 import Footer from "./components/footer";
 import MoviesPage from "./pages/movies";
 
-const RootLayout = ({ children }: { children: React.ReactNode }) => {
+const RootLayout = ({ }: { children: React.ReactNode }) => {
   return (
     <html lang="en">
       <body>

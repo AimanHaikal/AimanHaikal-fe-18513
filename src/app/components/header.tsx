@@ -1,11 +1,15 @@
 // header.tsx
-import { useEffect } from "react";
+import React from "react";
 import { SlMagnifier } from "react-icons/sl";
 import { VscAccount } from "react-icons/vsc";
+import Description from "./description";
+import SearchForm from "./searchForm";
 import PlayButton from "../styles/icons/Play Button";
+import { useAppContext } from "../context/appContext";
 
 const Header = () => {
-  useEffect(() => {
+  const { showDescription } = useAppContext();
+  React.useEffect(() => {
     // Check if window is defined (running on the client-side)
     if (typeof window !== "undefined") {
       const path = window.location.pathname;
@@ -70,14 +74,7 @@ const Header = () => {
         <div className="header-bottom-left">
           <PlayButton />
         </div>
-        <div className="header-bottom-right">
-          <h1 style={{ textAlign: "left" }}>Find your movies here!</h1>
-
-          <p>
-            Explore our gallery full of exciting films from all around the globe
-          </p>
-          <p>Only your entertainment. No hidden charges or disturbing ads.</p>
-        </div>
+        {showDescription ? <Description /> : <SearchForm />}
       </div>
     </header>
   );

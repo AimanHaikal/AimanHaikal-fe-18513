@@ -333,3 +333,80 @@ h1 {
   grid-column: span 2;
   grid-row: span 1;
 }
+
+.search-form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.search-title {
+  margin-bottom: 1rem;
+}
+
+.search-input-wrapper {
+  display: flex;
+  align-items: center;
+  width: 50%;
+  position: relative;
+}
+
+.search-input-wrapper svg {
+  position: absolute;
+  left: 10px;
+}
+
+.search-input {
+  padding: 0.5rem 0.5rem 0.5rem 2.5rem;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  width: 100%;
+  border-radius: 30px; /* Add this line to make the corners rounded */
+}
+
+.date-time-picker {
+  display: flex;
+  margin-bottom: 1rem;
+  width: 100%;
+}
+
+.datetime-input {
+  padding: 0.5rem 2rem 0.5rem 2.5rem; /* Adjust padding as needed */
+  font-size: 1rem;
+  margin-right: 1rem;
+  width: 25%;
+  border-radius: 30px;
+  position: relative; /* Add position: relative; to the input */
+}
+
+.datetime-input::-webkit-calendar-picker-indicator {
+  position: absolute;
+  left: 10px; /* Adjust left position as needed */
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.search-button {
+  padding: 0.5rem;
+  color: black;
+  background-color: yellow;
+  border: none;
+  cursor: pointer;
+  border-radius: 30px;
+  font-weight: bold; /* Add font-weight: bold; */
+  width: 150px; /* Adjust width as needed */
+  height: 40px;
+}
+
+.search-button:hover {
+  padding: 0.5rem;
+  color: black;
+  background-color: lightyellow;
+  border: none;
+  cursor: pointer;
+  border-radius: 30px;
+  font-weight: bold; /* Add font-weight: bold; */
+  width: 150px; /* Adjust width as needed */
+  height: 40px;
+}
+

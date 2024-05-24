@@ -1,9 +1,9 @@
 // pages/movies.tsx
+import React from "react";
 import MovieGrid from "../components/movieGrid";
-import { useRouter } from "next/navigation";
+import { useAppContext } from "../context/appContext";
 
 const MoviesPage = () => {
-  const router = useRouter();
   const movies = [
     {
       title: "The Ring's Lord",
@@ -37,6 +37,8 @@ const MoviesPage = () => {
     },
   ];
 
+  const { toggleDescription } = useAppContext();
+
   return (
     <div className="movie-grid-container">
       <div
@@ -58,7 +60,7 @@ const MoviesPage = () => {
             textDecoration: "underline",
             color: "yellow",
           }}
-          onClick={() => router.push("")}
+          onClick={toggleDescription}
         >
           View More
         </a>
