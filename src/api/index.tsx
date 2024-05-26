@@ -30,6 +30,12 @@ const apiEndpoints = {
         d_date: dDate,
       },
     }),
+  getMoviesByPerformer: (performerName: any) =>
+    api.get(`/movies/performer-movies`, {
+      params: {
+        performer_name: performerName,
+      },
+    }),
   // Add more endpoints as needed
 };
 
