@@ -1,4 +1,4 @@
-// _app.tsx
+// app.tsx
 import { ChakraProvider } from "@chakra-ui/react";
 import { AppProvider } from "./context/appContext";
 import Layout from "./layout";

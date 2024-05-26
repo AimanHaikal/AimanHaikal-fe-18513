@@ -5,18 +5,21 @@ import "./styles/globals.css";
 import Header from "./components/header";
 import Footer from "./components/footer";
 import MoviesPage from "./pages/movies";
+import { AppProvider } from "./context/appContext";
 
-const RootLayout = ({ }: { children: React.ReactNode }) => {
+const RootLayout = ({}: { children: React.ReactNode }) => {
   return (
-    <html lang="en">
-      <body>
-        <Header />
+    <AppProvider>
+      <html lang="en">
+        <body>
+          <Header />
 
-        <MoviesPage />
+          <MoviesPage />
 
-        <Footer />
-      </body>
-    </html>
+          <Footer />
+        </body>
+      </html>
+    </AppProvider>
   );
 };
 

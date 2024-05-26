@@ -26,7 +26,7 @@ export const AppProvider: React.FC<AppProviderProps> = ({ children }) => {
   const [showDescription, setShowDescription] = React.useState(true);
 
   const toggleDescription = () => {
-    setShowDescription(!showDescription);
+    setShowDescription(false);
   };
 
   return (
