@@ -37,7 +37,7 @@ const MoviesPage = () => {
     },
   ];
 
-  const { toggleDescription } = useAppContext();
+  const { showDescription, toggleDescription } = useAppContext();
 
   return (
     <div className="movie-grid-container">
@@ -51,19 +51,21 @@ const MoviesPage = () => {
         }}
       >
         <h1 style={{ textAlign: "left", color: "white", margin: 0 }}>
-          New Releases
+          {showDescription ? "New Releases" : "Search Results"}
         </h1>
-        <a
-          style={{
-            marginLeft: "auto",
-            cursor: "pointer",
-            textDecoration: "underline",
-            color: "yellow",
-          }}
-          onClick={toggleDescription}
-        >
-          View More
-        </a>
+        {showDescription && (
+          <a
+            style={{
+              marginLeft: "auto",
+              cursor: "pointer",
+              textDecoration: "underline",
+              color: "yellow",
+            }}
+            onClick={toggleDescription}
+          >
+            View More
+          </a>
+        )}
       </div>
       <br />
       <MovieGrid movies={movies} />
